@@ -1,0 +1,24 @@
+@import "typography-font-families.less";
+@import "typography-sizes.less";
+@import "typography-mixins.less";
+@import "typography-defaults.less";
+
+.route-typography {
+    background: url("../img/grid/hzgrid24.png") repeat;
+    .font();
+    .typographyHeadings();
+    .typographyTextElements();
+    .typographyCodeElements();
+    .typographyListElements();
+    .typographyTableElements();
+    .typographyOtherElements();
+}
+.content {
+    margin-bottom: @magicNumber;
+}
+.footer .footer-column-wrapper {
+    margin-top: @magicNumber/2;
+}
+.route-typography .flash-wrap img {
+    margin-top: @magicNumber/6;
+}
