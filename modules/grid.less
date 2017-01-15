@@ -1,3 +1,5 @@
+
+
 /**
  * Responsive Grid
  */
@@ -31,12 +33,32 @@
 /**
  * Wrap grid in a container.
  */
-.container() {
+.grid(@maxWidth: 960px) {
     margin-right: auto;
     margin-left: auto;
+    max-width: @maxWidth;
 }
 
+.showGrid(@maxWidth: 960px, @gridImage) {
+    background: url("@{gridImage}") repeat-y fixed center center;
+    background-size: 100% auto;
 
+
+    @media (min-width: @maxWidth) {
+        background-size: @maxWidth auto;
+    }
+}
+
+//show hgrid
+.showhGrid(@maxWidth: 960px, @gridImage) {
+    background: url("@{gridImage}") fixed center center !important;
+    background-size: 100% auto;
+
+
+    @media (min-width: @maxWidth) {
+        background-size: @maxWidth auto;
+    }
+}
 
 /**
  * All columns must be wrapped in a row.

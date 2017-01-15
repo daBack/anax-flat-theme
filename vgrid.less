@@ -1,0 +1,75 @@
+/* Gridbaserad layout*/
+
+@import "grid.less";
+@import url(modules);
+@magicNumber: 24px;
+
+
+.inner-wrap {
+    @gridWidth: 900px;
+    @gridImage: "../img/grid940x12x60x20-nomargin.png";
+    // @gridImage: "../img/grid950x24x30x10-nomargin.png";
+    .grid(@gridWidth);
+    // html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    // }
+
+    // &.inner-wrap-footer,
+    &.inner-wrap-header {
+        @gridWidth: 100%;
+        .grid(@gridWidth);
+        // html.vgrid {
+            .showGrid(@gridWidth, @gridImage);
+        // }
+    }
+}
+
+.outer-wrap-header,
+.outer-wrap-main,
+.footer-column-wrapper,{
+    margin-bottom: @magicNumber;
+}
+.footer-column-wrapper,{
+    .clearfix();
+}
+
+/* HEADER */
+
+.logo-1 {
+    display:none;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+.site-logo-text {
+    .column(3);
+}
+.navbar2 {
+    .column(12);
+    background-color: yellow;
+}
+/* HEADER */
+
+/* MAIN DELEN */
+.row {
+    .row();
+}
+
+.main {
+    .column(12);
+}
+/* SLUT PÅ MAIN */
+
+/* FOOTER */
+.footer-column {
+    .column(4);
+    background-color: brown;
+}
+.site-footer {
+    .column(12);
+        background-color: blue;
+}
+.outer-wrap-footer {
+    background-color: green;
+}
+/* FOOTER */
